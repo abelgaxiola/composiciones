@@ -1,0 +1,32 @@
+[
+  {
+    "Id": 1,
+    "Name": "Mi Tio Fernando",
+    "Url": "http://composicionesmusicales.com/canciones/Mi_Tio_Fernando.mp3",
+    "Type": "Banda"
+  },
+  {
+    "Id": 2,
+    "Name": "Amor De Lejos",
+    "Url": "http://composicionesmusicales.com/canciones/Amor_De_Lejos.mp3",
+    "Type": "Banda"
+  },
+  {
+    "Id": 3,
+    "Name": "Ella No Es De Carne y Hueso",
+    "Url": "http://composicionesmusicales.com/canciones/Ella_No_Es_De_Carne_y_Hueso.mp3",
+    "Type": "Grupo"
+  },
+  {
+    "Id": 4,
+    "Name": "Un Minuto Me Toma",
+    "Url": "http://composicionesmusicales.com/canciones/Un_Minuto_Me_Toma.mp3",
+    "Type": "Banda"
+  },
+  {
+    "Id": 5,
+    "Name": "Si Tu No Entiendes De Amor",
+    "Url": "http://composicionesmusicales.com/canciones/Si_Tu_No_Entiendes_De_Amor_2.mp3",
+    "Type": "Mariachi"
+  }
+]

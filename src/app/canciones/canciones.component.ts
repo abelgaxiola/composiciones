@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CancionesService } from './../canciones.service';
+import { Cancion } from './../cancion';
 
 @Component({
   selector: 'app-canciones',
@@ -6,10 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./canciones.component.scss']
 })
 export class CancionesComponent implements OnInit {
+  canciones: Cancion[];
+  errorMessage: string;
 
-  constructor() { }
+  constructor(private cancionesService: CancionesService) { }
 
   ngOnInit() {
+    this.cancionesService.getSongs()
+      .subscribe(canciones => this.canciones = canciones,
+      error => this.errorMessage = <any>error);
   }
 
 }

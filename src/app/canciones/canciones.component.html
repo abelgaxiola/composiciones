@@ -22,7 +22,9 @@
         <a href="http://composicionesmusicales.com/canciones/Un_Minuto_Me_Toma.mp3" class="list-group-item list-group-item-action"><i class="fa fa-play-circle left"></i> Un Minuto Me Toma</a>
         <a href="http://composicionesmusicales.com/canciones/Las_Hormigas_Cumbia.mp3" class="list-group-item list-group-item-action"><i class="fa fa-play-circle left"></i> Las Hormigas Cumbia</a>
       </div>
-
+      <div *ngFor='let cancion of canciones'>
+        {{cancion.Name}}
+      </div>
     </div>
   </div>
 </div>
