@@ -9,6 +9,7 @@ import { Cancion } from './../cancion';
 })
 export class CancionesComponent implements OnInit {
   canciones: Cancion[];
+  songType = 'noneSelected';
   errorMessage: string;
 
   constructor(private cancionesService: CancionesService) { }
@@ -19,4 +20,7 @@ export class CancionesComponent implements OnInit {
       error => this.errorMessage = <any>error);
   }
 
+  songTypeSelected(type: string) {
+    this.songType = type;
+  }
 }

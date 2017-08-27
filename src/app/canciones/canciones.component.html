@@ -9,21 +9,22 @@
         <h1 class="card-title text-uppercase">canciones</h1>
         <p class="card-text text-center">Seleccione el tipo de musica que desee escuchar.</p>
         <div class="text-center">
-          <a class="btn btn-primary">Banda</a>
-          <a class="btn btn-primary">Grupo</a>
-          <a class="btn btn-primary">Mariachi</a>
+          <a class="btn btn-primary" (click)="songTypeSelected('Banda')">Banda</a>
+          <a class="btn btn-primary" (click)="songTypeSelected('Grupo')">Grupo</a>
+          <a class="btn btn-primary" (click)="songTypeSelected('Mariachi')">Mariachi</a>
         </div>
       </div>
       <!--/.Panel-->
       <br>
-      <div class="list-group">
+      <div [hidden]="songType!=='noneSelected'" class="list-group">
         <li class="list-group-item active">Mis mas recientes composiciones</li>
         <a href="http://composicionesmusicales.com/canciones/Ella_No_Es_De_Carne_y_Hueso.mp3" class="list-group-item list-group-item-action"><i class="fa fa-play-circle left"></i> Ella No Es De Carne y Hueso</a>
         <a href="http://composicionesmusicales.com/canciones/Un_Minuto_Me_Toma.mp3" class="list-group-item list-group-item-action"><i class="fa fa-play-circle left"></i> Un Minuto Me Toma</a>
         <a href="http://composicionesmusicales.com/canciones/Las_Hormigas_Cumbia.mp3" class="list-group-item list-group-item-action"><i class="fa fa-play-circle left"></i> Las Hormigas Cumbia</a>
       </div>
-      <div *ngFor='let cancion of canciones'>
-        {{cancion.Name}}
+      <div [hidden]="songType==='noneSelected'" class="list-group">
+        <li class="list-group-item active">Mis canciones de {{songType}}</li>
+        <a *ngFor='let cancion of canciones' href="{{cancion.Url}}" class="list-group-item list-group-item-action"><i class="fa fa-play-circle left"></i> {{cancion.Name}}</a>
       </div>
     </div>
   </div>
