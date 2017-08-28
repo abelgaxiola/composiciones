@@ -7,19 +7,19 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/observable/throw';
 
-import { Cancion } from './cancion';
+import { Song } from './song';
 
 @Injectable()
 export class CancionesService {
   private cancionesUrl = './assets/canciones.json';
-  private canciones: Cancion[];
+  private songs: Song[];
 
   constructor(private http: Http) {
   }
 
-  public getSongs(): Observable<Cancion[]> {
+  public getSongs(): Observable<Song[]> {
     return this.http.get(this.cancionesUrl)
-      .map((response: Response) => <Cancion[]>response.json())
+      .map((response: Response) => <Song[]>response.json())
       .do(data => console.log('All: ' + JSON.stringify(data)))
       .catch(this.handleError);
   }
