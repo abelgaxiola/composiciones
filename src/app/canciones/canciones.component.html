@@ -3,7 +3,7 @@
   <div class="row">
     <div class="col-md-1"></div>
     <div class="col-md-10">
-      <!--Panel-->
+      <!-- Card -->
       <div class="card card-body">
         <img class="img-fluid" src="./assets/img/canciones.jpg">
         <h1 class="card-title text-uppercase">canciones</h1>
@@ -14,14 +14,13 @@
           <a class="btn btn-primary" (click)="songTypeSelected('Mariachi')">Mariachi</a>
         </div>
       </div>
-      <!--/.Panel-->
       <br>
+      <!-- New songs -->
       <div [hidden]="songType!=='noneSelected'" class="list-group">
         <li class="list-group-item active">Mis mas recientes composiciones</li>
-        <a href="http://composicionesmusicales.com/canciones/Ella_No_Es_De_Carne_y_Hueso.mp3" class="list-group-item list-group-item-action"><i class="fa fa-play-circle left"></i> Ella No Es De Carne y Hueso</a>
-        <a href="http://composicionesmusicales.com/canciones/Un_Minuto_Me_Toma.mp3" class="list-group-item list-group-item-action"><i class="fa fa-play-circle left"></i> Un Minuto Me Toma</a>
-        <a href="http://composicionesmusicales.com/canciones/Las_Hormigas_Cumbia.mp3" class="list-group-item list-group-item-action"><i class="fa fa-play-circle left"></i> Las Hormigas Cumbia</a>
+        <a *ngFor='let cancion of canciones | slice:0:3' href="{{cancion.Url}}" class="list-group-item list-group-item-action"><i class="fa fa-play-circle left"></i> {{cancion.Name}}</a>
       </div>
+      <!-- Songs by type -->
       <div [hidden]="songType==='noneSelected'" class="list-group">
         <li class="list-group-item active">Mis canciones de {{songType}}</li>
         <a [hidden]="cancion.Type!==songType" *ngFor='let cancion of canciones' href="{{cancion.Url}}" class="list-group-item list-group-item-action"><i class="fa fa-play-circle left"></i> {{cancion.Name}}</a>
