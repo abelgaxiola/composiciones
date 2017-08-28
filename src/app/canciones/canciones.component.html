@@ -4,7 +4,7 @@
     <div class="col-md-1"></div>
     <div class="col-md-10">
       <!-- Card -->
-      <div class="card card-body">
+      <div class="animated zoomIn card card-body">
         <img class="img-fluid" src="./assets/img/canciones.jpg">
         <h1 class="card-title text-uppercase">canciones</h1>
         <p class="card-text text-center">Seleccione el tipo de musica que desee escuchar.</p>
@@ -15,15 +15,17 @@
         </div>
       </div>
       <br>
-      <!-- New songs -->
-      <div [hidden]="songType!=='noneSelected'" class="list-group">
-        <li class="list-group-item active">Mis mas recientes composiciones</li>
-        <a *ngFor='let cancion of canciones | slice:0:3' href="{{cancion.Url}}" class="list-group-item list-group-item-action"><i class="fa fa-play-circle left"></i> {{cancion.Name}}</a>
-      </div>
-      <!-- Songs by type -->
-      <div [hidden]="songType==='noneSelected'" class="list-group">
-        <li class="list-group-item active">Mis canciones de {{songType}}</li>
-        <a [hidden]="cancion.Type!==songType" *ngFor='let cancion of canciones' href="{{cancion.Url}}" class="list-group-item list-group-item-action"><i class="fa fa-play-circle left"></i> {{cancion.Name}}</a>
+      <div class="animated fadeIn">
+        <!-- New songs -->
+        <div [hidden]="songType!=='noneSelected'" class="list-group">
+          <li class="list-group-item active">Mis mas recientes composiciones</li>
+          <a *ngFor='let cancion of canciones | slice:0:3' href="{{cancion.Url}}" class="list-group-item list-group-item-action"><i class="fa fa-play-circle left"></i> {{cancion.Name}}</a>
+        </div>
+        <!-- Songs by type -->
+        <div [hidden]="songType==='noneSelected'" class="list-group">
+          <li class="list-group-item active">Mis canciones de {{songType}}</li>
+          <a [hidden]="cancion.Type!==songType" *ngFor='let cancion of canciones' href="{{cancion.Url}}" class="animated fadeIn list-group-item list-group-item-action"><i class="fa fa-play-circle left"></i> {{cancion.Name}}</a>
+        </div>
       </div>
     </div>
   </div>
