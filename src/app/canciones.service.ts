@@ -11,14 +11,14 @@ import { Song } from './song';
 
 @Injectable()
 export class CancionesService {
-  private cancionesUrl = './assets/canciones.json';
+  private songsUrl = './assets/songs.json';
   private songs: Song[];
 
   constructor(private http: Http) {
   }
 
   public getSongs(): Observable<Song[]> {
-    return this.http.get(this.cancionesUrl)
+    return this.http.get(this.songsUrl)
       .map((response: Response) => <Song[]>response.json())
       .do(data => console.log('All: ' + JSON.stringify(data)))
       .catch(this.handleError);
