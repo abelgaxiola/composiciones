@@ -20,7 +20,6 @@ export class CancionesService {
   public getSongs(): Observable<Song[]> {
     return this.http.get(this.songsUrl)
       .map((response: Response) => <Song[]>response.json())
-      .do(data => console.log('All: ' + JSON.stringify(data)))
       .catch(this.handleError);
   }
 
